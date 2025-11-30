@@ -5,7 +5,10 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace assignment_4
-{
+{	
+	/// <summary>
+	/// Class that is used as a generic and represented in Entry <K, V> as v value
+	/// </summary>
 	public class Item : IComparable<Item>
 	{
 		public string Name;
