@@ -21,37 +21,21 @@ namespace assignment_4
 
 		public override bool Equals(object obj)
 		{
-			bool result = true;
-			try
-			{
-				if (obj == null)
-					throw new ArgumentNullException("The object cannot be null");
+			if (obj == null)
+				return false;
 
-				if (obj.GetType() != this.GetType())
-				{
-					throw new ArgumentException("The object has to be an item");	
-				}
-
-				Item objAsItem = (Item)obj;
-				
-				if (objAsItem.Name != this.Name)
-					result = false;
-				if (objAsItem.GoldPieces != this.GoldPieces)
-					result = false;
-				if (objAsItem.Weight != this.Weight)
-					result = false;
-			}
-			catch (ArgumentNullException)
+			if (obj.GetType() != this.GetType())
 			{
-				result = false;
-			}
-			
-			catch (ArgumentException)
-			{
-				result = false;
+				return false;	
 			}
 
-			return result;
+			Item objAsItem = (Item)obj;
+
+			if (objAsItem.Name != this.Name || objAsItem.GoldPieces != this.GoldPieces ||
+															objAsItem.Weight != this.Weight)
+				return false;
+
+			return true;
 		}
 
 		public int CompareTo(Item other)
