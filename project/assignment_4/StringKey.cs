@@ -56,14 +56,12 @@ namespace assignment_4
 		private int GetHashCodeRecursive(int index)
 		{
 			if (index >= KeyName.Length)
-			{
 				return 0;
-			}
 
 			int currentChar = KeyName[index];
-			int restOfHash = GetHashCodeRecursive(index + 1);
+			int hashSegment = GetHashCodeRecursive(index + 1);
 
-			return currentChar + (31 * restOfHash);
+			return currentChar + (31 * hashSegment);
 		}
 	}
 }

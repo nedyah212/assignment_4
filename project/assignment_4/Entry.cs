@@ -6,7 +6,15 @@ using System.Threading.Tasks;
 
 namespace assignment_4
 {
-	public class Entry
+	public class Entry<K, V>
 	{
+		public K Key;
+		public V Value;
+
+		public Entry(K key, V value)
+		{
+			Key = key;
+			Value = value;
+		}
 	}
 }
